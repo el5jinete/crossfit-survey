@@ -36,8 +36,7 @@ const QUESTIONS = [
   { id: 23, section: 7, type: "beta", text: "¿Te gustaría participar en una prueba beta de la app?", options: ["¡Sí!", "No, gracias"] },
 ];
 
-// ─── RESULTS PASSWORD (cambiá esto por tu contraseña) ───
-const ADMIN_PASSWORD = "xx";
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
 export default function App() {
   const [view, setView] = useState("form");
