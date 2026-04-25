@@ -84,7 +84,7 @@ git push -u origin main
 | Completar encuesta | `tu-app.vercel.app` |
 | Ver resultados | `tu-app.vercel.app/#resultados` |
 
-**Contraseña de resultados:** `crossfit2026` (podés cambiarla en `src/App.jsx`, buscá `ADMIN_PASSWORD`)
+**Contraseña de resultados:** `xxxxxxxxxxxx` (podés cambiarla en `src/App.jsx`, buscá `ADMIN_PASSWORD`)
 
 ---
 
