@@ -37,7 +37,7 @@ const QUESTIONS = [
 ];
 
 // ─── RESULTS PASSWORD (cambiá esto por tu contraseña) ───
-const ADMIN_PASSWORD = "crossfit2026";
+const ADMIN_PASSWORD = "xx";
 
 export default function App() {
   const [view, setView] = useState("form");
