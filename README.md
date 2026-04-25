@@ -82,7 +82,7 @@ git push -u origin main
 | Acción | URL |
 |--------|-----|
 | Completar encuesta | `tu-app.vercel.app` |
-| Ver resultados | `tu-app.vercel.app/#resultados` |
+| Ver resultados | `tu-app.vercel.app/#xxxxx` |
 
 **Contraseña de resultados:** `xxxxxxxxxxxx` (podés cambiarla en `src/App.jsx`, buscá `ADMIN_PASSWORD`)
 
