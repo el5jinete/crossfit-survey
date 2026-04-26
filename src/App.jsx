@@ -51,7 +51,7 @@ export default function App() {
   const contentRef = useRef(null);
 
   useEffect(() => {
-    if (contentRef.current) contentRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
   }, [currentSection]);
 
   // Check URL for admin route
@@ -423,18 +423,25 @@ export default function App() {
       <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "linear-gradient(transparent, #0a0a0f 20%)", padding: "40px 16px 20px" }}>
         <div style={{ maxWidth: 600, margin: "0 auto", display: "flex", gap: 12 }}>
           {currentSection > 1 && (
-            <button onClick={() => setCurrentSection(s => s - 1)} style={{
-              flex: 1, padding: 14, borderRadius: 12, background: "#1a1a2e", color: "#aaa", border: "1px solid #1f1f2e", fontSize: 15, fontWeight: 600, cursor: "pointer",
-            }}>← Anterior</button>
+            <button
+              onTouchEnd={e => { e.preventDefault(); setCurrentSection(s => s - 1); }}
+              onClick={() => setCurrentSection(s => s - 1)}
+              style={{ flex: 1, padding: 14, borderRadius: 12, background: "#1a1a2e", color: "#aaa", border: "1px solid #1f1f2e", fontSize: 15, fontWeight: 600, cursor: "pointer" }}
+            >← Anterior</button>
           )}
           {currentSection < totalSections ? (
-            <button onClick={() => setCurrentSection(s => s + 1)} style={{
-              flex: 2, padding: 14, borderRadius: 12, background: "#ff3a5c", color: "#fff", border: "none", fontSize: 15, fontWeight: 700, cursor: "pointer",
-            }}>Siguiente →</button>
+            <button
+              onTouchEnd={e => { e.preventDefault(); setCurrentSection(s => s + 1); }}
+              onClick={() => setCurrentSection(s => s + 1)}
+              style={{ flex: 2, padding: 14, borderRadius: 12, background: "#ff3a5c", color: "#fff", border: "none", fontSize: 15, fontWeight: 700, cursor: "pointer" }}
+            >Siguiente →</button>
           ) : (
-            <button onClick={handleSubmit} disabled={submitting} style={{
-              flex: 2, padding: 14, borderRadius: 12, background: submitting ? "#555" : "linear-gradient(135deg, #ff3a5c, #e92040)", color: "#fff", border: "none", fontSize: 15, fontWeight: 700, cursor: submitting ? "default" : "pointer",
-            }}>{submitting ? "Enviando..." : "Enviar respuestas 🚀"}</button>
+            <button
+              onTouchEnd={e => { e.preventDefault(); if (!submitting) handleSubmit(); }}
+              onClick={handleSubmit}
+              disabled={submitting}
+              style={{ flex: 2, padding: 14, borderRadius: 12, background: submitting ? "#555" : "linear-gradient(135deg, #ff3a5c, #e92040)", color: "#fff", border: "none", fontSize: 15, fontWeight: 700, cursor: submitting ? "default" : "pointer" }}
+            >{submitting ? "Enviando..." : "Enviar respuestas 🚀"}</button>
           )}
         </div>
       </div>
